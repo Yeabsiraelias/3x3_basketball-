@@ -1,0 +1,133 @@
+import { CommitteeMember } from '@/lib/types';
+
+export const LEADERSHIP_MEMBERS: CommitteeMember[] = [
+  {
+    id: 'tamrat-alemu-befekadu',
+    name: 'Tamrat Alemu Befekadu',
+    role: 'Lead Director & Federation Liaison',
+    badge: 'Lead Director',
+    department: 'Governance & Institutional Relations',
+    officialRole: 'Tournament Director',
+    certificationStatus: true,
+    fibaCredentials: 'FIBA Certified Tournament Director',
+    image: '/team/tame.jpg',
+    responsibilities:
+      'Manages high-level governance, institutional partnerships, and official communications with the Ethiopian Basketball Federation (EBF) and city sports authorities. Oversees digital platform administration, player rankings, legal compliance/sanctioning, and stakeholder relations.',
+    bio: 'Manages high-level governance, institutional partnerships, and official communications with the Ethiopian Basketball Federation (EBF) and city sports authorities. Oversees digital platform administration, player rankings, legal compliance/sanctioning, and stakeholder relations.',
+  },
+  {
+    id: 'blen-asrat-kebede',
+    name: 'Blen Asrat Kebede',
+    role: 'Communication, FIBA Integration & Media Manager',
+    badge: 'FIBA Integration & Media',
+    department: 'Competitions & Media Relations',
+    officialRole: 'Tournament Director',
+    certificationStatus: true,
+    fibaCredentials: 'FIBA 3x3 Event Maker Certified',
+    image: '/team/blen.jpg',
+    responsibilities:
+      'Oversees tournament execution, official FIBA competition rules, and promotional media coverage. Co-manages FIBA 3x3 Event Maker software, verifies player eligibility, coordinates certified referees, and leads digital press outputs.',
+    bio: 'Oversees tournament execution, official FIBA competition rules, and promotional media coverage. Co-manages FIBA 3x3 Event Maker software, verifies player eligibility, coordinates certified referees, and leads digital press outputs.',
+  },
+  {
+    id: 'brook-hailu-yemane',
+    name: 'Brook Hailu Yemane',
+    role: 'Operations, Logistics & Matchday Manager',
+    badge: 'Operations & Logistics',
+    department: 'Matchday Infrastructure & Operations',
+    officialRole: 'Table Official',
+    certificationStatus: true,
+    fibaCredentials: 'Certified Table Official & Matchday Lead',
+    image: '/team/brook.jpg',
+    responsibilities:
+      'Handles physical site preparation, half-court setup, equipment readiness, on-ground security, and schedule enforcement during matchdays. Ensures athlete safety and court flow.',
+    bio: 'Handles physical site preparation, half-court setup, equipment readiness, on-ground security, and schedule enforcement during matchdays. Ensures athlete safety and court flow.',
+  },
+  {
+    id: 'robel-alemu-ayele',
+    name: 'Robel Alemu Ayele',
+    role: 'Youth Development & Grassroots Coordinator',
+    badge: 'Youth & Grassroots',
+    department: 'Grassroots Outreach & Academies',
+    officialRole: 'Table Official',
+    certificationStatus: true,
+    fibaCredentials: 'Certified Table Official & Youth Lead',
+    image: '/team/robel.jpg',
+    responsibilities:
+      'Focuses on talent pipelines, coordinating secondary school and academy outreach, organizing U18 clinics, and scouting emerging talent across Ethiopian regions.',
+    bio: 'Focuses on talent pipelines, coordinating secondary school and academy outreach, organizing U18 clinics, and scouting emerging talent across Ethiopian regions.',
+  },
+  {
+    id: 'lidiya-eshetu-dula',
+    name: 'Lidiya Eshetu Dula',
+    role: 'Finance, Commercial & Sponsorships Director',
+    badge: 'Finance & Commercial',
+    department: 'Commercial Sponsorships & Auditing',
+    officialRole: 'Table Official',
+    certificationStatus: true,
+    fibaCredentials: 'Certified Table Official & Commercial Lead',
+    image: '/team/lidya.jpg',
+    responsibilities:
+      'Drives financial sustainability by managing program budgets, cash flows, commercial sponsorship proposals, corporate partnerships, and post-event financial audits.',
+    bio: 'Drives financial sustainability by managing program budgets, cash flows, commercial sponsorship proposals, corporate partnerships, and post-event financial audits.',
+  },
+  {
+    id: 'yeabsira-elias',
+    name: 'Yeabsira Elias',
+    role: 'Web Development & Digital Marketing Lead',
+    badge: 'Web Dev & Digital Lead',
+    department: 'Digital Marketing & Systems',
+    officialRole: 'Tournament Director',
+    certificationStatus: true,
+    fibaCredentials: 'FIBA Digital Infrastructure & Systems Lead',
+    image: '/team/yeabsira.jpg',
+    responsibilities:
+      'Architects and maintains the official web platform, database systems, and FIBA digital infrastructure integrations. Oversees digital marketing campaigns, international website publishing, social media ad scripts, and online registration pipelines to maximize engagement and visibility.',
+    bio: 'Architects and maintains the official web platform, database systems, and FIBA digital infrastructure integrations. Oversees digital marketing campaigns, international website publishing, social media ad scripts, and online registration pipelines to maximize engagement and visibility.',
+  },
+  {
+    id: 'yabtse-yonas-jima',
+    name: 'Yabtse Yonas Jima',
+    role: 'Social Media Branding and Promotion Officer',
+    badge: 'Branding & Promotion',
+    department: 'Social Branding & Media Promotion',
+    officialRole: 'Table Official',
+    certificationStatus: true,
+    fibaCredentials: 'FIBA Media & Table Official Delegate',
+    image: '/team/yabtse.jpg',
+    responsibilities:
+      'Leads social media brand presence, visual identity, and online promotional campaigns. Crafts engaging multimedia assets, schedules promotional rollouts across social channels, and boosts tournament visibility and fan engagement.',
+    bio: 'Leads social media brand presence, visual identity, and online promotional campaigns. Crafts engaging multimedia assets, schedules promotional rollouts across social channels, and boosts tournament visibility and fan engagement.',
+  },
+  {
+    id: 'selamawit-kassahun-yosef',
+    name: 'Selamawit Kassahun Yosef',
+    role: "Women's Diaspora Community Representative",
+    badge: 'Diaspora & Women in Sports',
+    department: 'Diaspora Engagement & Gender Equity',
+    officialRole: 'Tournament Director',
+    certificationStatus: true,
+    fibaCredentials: 'FIBA Diaspora & Women in Sport Delegate',
+    image: '/team/selamawit.jpg',
+    responsibilities:
+      "Leads international engagement and outreach across the Ethiopian diaspora community, spearheading initiatives to empower female athletes, secure cross-border partnerships, and support grassroots women's 3x3 basketball development.",
+    bio: "Leads international engagement and outreach across the Ethiopian diaspora community, spearheading initiatives to empower female athletes, secure cross-border partnerships, and support grassroots women's 3x3 basketball development.",
+  },
+  {
+    id: 'yamlak-menase',
+    name: 'Yamlak Menase',
+    role: "General Strategist & Men's Diaspora Community Representative",
+    badge: "Strategy & Men's Diaspora",
+    department: "Global Strategy & Diaspora Relations",
+    officialRole: 'Tournament Director',
+    certificationStatus: true,
+    fibaCredentials: 'FIBA Global Strategy & Diaspora Delegate',
+    image: '/team/yamlak.jpg',
+    responsibilities:
+      "Shapes overarching institutional strategy and drives international engagement across the male Ethiopian diaspora network. Spearheads cross-border partnerships, strategic player recruitment pipelines, and resource development to advance Ethiopian 3x3 basketball internationally.",
+    bio: "Shapes overarching institutional strategy and drives international engagement across the male Ethiopian diaspora network. Spearheads cross-border partnerships, strategic player recruitment pipelines, and resource development to advance Ethiopian 3x3 basketball internationally.",
+  },
+];
+
+export const committeeMembers = LEADERSHIP_MEMBERS;
+export const CORE_COMMITTEE = LEADERSHIP_MEMBERS;
