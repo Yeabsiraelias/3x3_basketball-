@@ -121,7 +121,7 @@ INSERT INTO tournaments (tournament_id, event_name, event_type, location, event_
 VALUES
     ('b1111111-1111-1111-1111-111111111111', 'Addis Urban Quest Final 2026', 'Quest Final', 'Meskel Square Arena, Addis Ababa', '2026-11-20', 'EM-ETH-2026-001', 'Upcoming'),
     ('b2222222-2222-2222-2222-222222222222', 'Rift Valley 3x3 Lite Quest', 'Lite Quest', 'Hawassa Millennium Park Court', '2026-12-05', 'EM-ETH-2026-002', 'Upcoming'),
-    ('b3333333-3333-3333-3333-333333333333', 'Lake Tana Youth Development Clinic', 'Clinic', 'Bahir Dar Youth Center', '2026-12-18', 'EM-ETH-2026-003', 'Upcoming'),
+    ('b3333333-3333-3333-3333-333333333333', 'Bahir Dar Regional 3x3 Clinic', 'Clinic', 'Bahir Dar Stadium Sports Courts', '2026-12-18', 'EM-ETH-2026-003', 'Upcoming'),
     ('b4444444-4444-4444-4444-444444444444', 'Eastern Express 3x3 Lite Quest', 'Lite Quest', 'Dire Dawa Sports Complex', '2027-01-15', 'EM-ETH-2027-001', 'Upcoming')
 ON CONFLICT (tournament_id) DO NOTHING;
 
@@ -147,3 +147,30 @@ ON CONFLICT (official_id) DO UPDATE SET
     full_name = EXCLUDED.full_name,
     role = EXCLUDED.role,
     certification_status = EXCLUDED.certification_status;
+
+-- ------------------------------------------------------------------------------
+-- 6. NATIONAL SCOUTING PROGRAM & TALENT EVALUATION
+-- ------------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS scouting_registrations (
+    registration_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    full_name TEXT NOT NULL,
+    division TEXT NOT NULL, -- 'U16 Junior Circuit', 'U18 Elite Pathway', 'U23 National Roster Pool'
+    gender gender_enum NOT NULL,
+    date_of_birth DATE,
+    height_cm INT,
+    region TEXT NOT NULL,
+    phone TEXT NOT NULL,
+    email TEXT,
+    fiba_profile_url TEXT,
+    evaluation_status TEXT DEFAULT 'Under Review' NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_scouting_division ON scouting_registrations(division);
+CREATE INDEX IF NOT EXISTS idx_scouting_gender ON scouting_registrations(gender);
+CREATE INDEX IF NOT EXISTS idx_scouting_status ON scouting_registrations(evaluation_status);
+
+ALTER TABLE scouting_registrations ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Public can view scouting registrations" ON scouting_registrations FOR SELECT USING (true);
+CREATE POLICY "Public can insert scouting registrations" ON scouting_registrations FOR INSERT WITH CHECK (true);
+

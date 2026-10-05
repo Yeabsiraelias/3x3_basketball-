@@ -21,9 +21,9 @@ export const MOCK_TOURNAMENTS: Tournament[] = [
   },
   {
     tournament_id: 'b3333333-3333-3333-3333-333333333333',
-    event_name: 'Lake Tana Youth Development Clinic',
+    event_name: 'Bahir Dar Regional 3x3 Clinic',
     event_type: 'Clinic',
-    location: 'Bahir Dar Youth Center Court',
+    location: 'Bahir Dar Stadium Sports Courts',
     event_date: '2026-12-18',
     fiba_event_maker_id: 'EM-ETH-2026-003',
     status: 'Upcoming',

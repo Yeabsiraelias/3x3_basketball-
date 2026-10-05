@@ -4,6 +4,7 @@ import CountdownTimer from '@/components/CountdownTimer';
 import EndorsementBanner from '@/src/components/EndorsementBanner';
 import FibaRegistrationCallout from '@/components/FibaRegistrationCallout';
 import TourSection from '@/src/components/TourSection';
+import ScoutingSection from '@/src/components/ScoutingSection';
 import LeadershipSection from '@/src/components/LeadershipSection';
 import {
   Flame,
@@ -128,7 +129,12 @@ export default function HomePage() {
         <TourSection />
       </section>
 
-      {/* 5. FIBA PROFILE REGISTRATION CALLOUT */}
+      {/* 5. NATIONAL SCOUTING PROGRAM */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <ScoutingSection />
+      </section>
+
+      {/* 6. FIBA PROFILE REGISTRATION CALLOUT */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <FibaRegistrationCallout />
       </section>

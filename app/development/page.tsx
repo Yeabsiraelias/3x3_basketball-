@@ -1,23 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
+import ClinicsSection from '@/src/components/ClinicsSection';
 import {
   Flame,
   Users,
   Sparkles,
   School,
-  Award,
   HeartHandshake,
-  CheckCircle2,
   ArrowRight,
-  ShieldCheck,
-  Calendar,
 } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Youth Development & Clinics | 3x3 Ethiopia',
   description:
-    'Grassroots 3x3 basketball clinics for U18 and U23 athletes, public school court outreach, and "Her Court" female empowerment workshops across Ethiopia.',
+    'Grassroots 3x3 basketball clinics for U16, U18, and U23 athletes across Harar, Dire Dawa, Bishoftu, Jimma, Gambela, Wolkite, Hawassa, Bahir Dar, and Wukro.',
 };
 
 export default function DevelopmentPage() {
@@ -38,83 +35,8 @@ export default function DevelopmentPage() {
         </p>
       </div>
 
-      {/* 2. SECTION: U18 & U23 ELITE CLINICS */}
-      <section id="u18-u23" className="rounded-3xl bg-surface/90 border border-surface-border p-8 sm:p-12 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7 space-y-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-orange/20 text-brand-orange text-xs font-black uppercase tracking-wider">
-              <Award className="w-4 h-4" />
-              Pathway to FIBA World Tour
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl font-black text-white uppercase italic tracking-tight">
-              U18 & U23 High-Performance Clinics
-            </h2>
-
-            <p className="text-zinc-300 leading-relaxed text-sm sm:text-base">
-              The 3x3 game moves at a relentless 12-second shot clock pace. Our youth clinics provide intensive tactical drills, pick-and-roll masterclasses, conditioning, and mental resilience workshops tailored specifically to FIBA 3x3 rules.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <div className="flex items-start gap-2.5 text-sm text-zinc-200">
-                <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0 mt-0.5" />
-                <span>12-Second Shot Clock Decision Making</span>
-              </div>
-              <div className="flex items-start gap-2.5 text-sm text-zinc-200">
-                <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0 mt-0.5" />
-                <span>Individual FIBA 3x3 Ranking Points</span>
-              </div>
-              <div className="flex items-start gap-2.5 text-sm text-zinc-200">
-                <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0 mt-0.5" />
-                <span>Physical Conditioning & Nutrition</span>
-              </div>
-              <div className="flex items-start gap-2.5 text-sm text-zinc-200">
-                <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0 mt-0.5" />
-                <span>National Squad Talent ID Combine</span>
-              </div>
-            </div>
-
-            <div className="pt-4">
-              <Link
-                href="/events?filter=Clinic"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-orange text-black font-black uppercase text-xs tracking-wider hover:bg-brand-orange-glow transition-all"
-              >
-                <span>Register for Upcoming Clinic</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-
-          <div className="lg:col-span-5 p-6 rounded-2xl bg-background/80 border border-surface-border space-y-4">
-            <h3 className="text-sm font-black uppercase tracking-wider text-white flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-brand-orange" />
-              Upcoming Clinic Schedule
-            </h3>
-
-            <div className="space-y-3">
-              <div className="p-3.5 rounded-xl bg-surface-light/70 border border-surface-border">
-                <div className="flex justify-between items-center text-xs text-brand-orange font-bold mb-1">
-                  <span>Bahir Dar Youth Center</span>
-                  <span>Dec 18, 2026</span>
-                </div>
-                <h4 className="text-sm font-black text-white">Lake Tana Youth Clinic</h4>
-                <p className="text-xs text-zinc-400 mt-1">U18 Boys & Girls — Free Admission</p>
-              </div>
-
-              <div className="p-3.5 rounded-xl bg-surface-light/70 border border-surface-border">
-                <div className="flex justify-between items-center text-xs text-brand-cyan font-bold mb-1">
-                  <span>Addis Ababa (Meskel Sq)</span>
-                  <span>Jan 24, 2027</span>
-                </div>
-                <h4 className="text-sm font-black text-white">Capital Fast-Paced Camp</h4>
-                <p className="text-xs text-zinc-400 mt-1">U23 Open Combine & FIBA Profile Induction</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 2. REGIONAL 3x3 CLINICS & CAMPS */}
+      <ClinicsSection />
 
       {/* 3. SECTION: SCHOOL OUTREACH PROGRAMS */}
       <section id="school-outreach" className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
