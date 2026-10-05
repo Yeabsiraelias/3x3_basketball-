@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import CountdownTimer from '@/components/CountdownTimer';
-import SponsorTicker from '@/components/SponsorTicker';
+import EndorsementBanner from '@/src/components/EndorsementBanner';
 import FibaRegistrationCallout from '@/components/FibaRegistrationCallout';
 import TourSection from '@/src/components/TourSection';
 import LeadershipSection from '@/src/components/LeadershipSection';
@@ -79,8 +79,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. SPONSOR TICKER */}
-      <SponsorTicker />
+      {/* 2. OFFICIAL ENDORSEMENT & TRUST BANNER */}
+      <EndorsementBanner />
 
       {/* 3. KEY HIGHLIGHT STATS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
