@@ -111,14 +111,15 @@ export default function LeadershipSection({
               {/* Top Image + Overlay Banner */}
               <div
                 className={`relative w-full overflow-hidden bg-surface-light ${
-                  preview ? 'h-36 sm:h-44' : 'h-72 sm:h-80'
+                  preview ? 'h-36 sm:h-44' : 'h-80 sm:h-[350px]'
                 }`}
               >
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
+                  className={`object-cover ${member.imagePosition ? '' : 'object-top'} group-hover:scale-105 transition-transform duration-500`}
                   sizes={
                     preview
                       ? '(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw'
@@ -128,8 +129,8 @@ export default function LeadershipSection({
                 <div
                   className={`absolute inset-0 bg-gradient-to-t ${
                     preview
-                      ? 'from-[#0F1626] via-[#0F1626]/30 to-transparent'
-                      : 'from-[#0F1626] via-[#0F1626]/40 to-transparent'
+                      ? 'from-[#0F1626]/90 via-transparent to-transparent'
+                      : 'from-[#0F1626]/85 via-transparent to-transparent'
                   }`}
                 />
 

@@ -54,6 +54,7 @@ export interface CommitteeMember {
   bio?: string;
   badge: string;
   image: string;
+  imagePosition?: string;
   officialRole: OfficialRole;
   certificationStatus: boolean;
   fibaCredentials?: string;

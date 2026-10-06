@@ -11,12 +11,13 @@ export default function CommitteeCard({ member }: CommitteeCardProps) {
   return (
     <div className="group relative rounded-2xl bg-surface/90 border border-surface-border hover:border-brand-orange/50 transition-all duration-300 overflow-hidden flex flex-col">
       {/* Image container with gradient overlay */}
-      <div className="relative w-full h-72 overflow-hidden bg-surface-light">
+      <div className="relative w-full h-80 sm:h-[350px] overflow-hidden bg-surface-light">
         <Image
           src={member.image}
           alt={member.name}
           fill
-          className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+          style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
+          className={`object-cover ${member.imagePosition ? '' : 'object-top'} group-hover:scale-105 transition-transform duration-500`}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-90" />

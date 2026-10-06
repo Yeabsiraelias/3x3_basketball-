@@ -108,7 +108,8 @@ export const LEADERSHIP_MEMBERS: CommitteeMember[] = [
     officialRole: 'Tournament Director',
     certificationStatus: true,
     fibaCredentials: 'FIBA Diaspora & Women in Sport Delegate',
-    image: '/team/selamawit.jpg',
+    image: '/team/selamawit.jpg?v=3',
+    imagePosition: 'center 35%',
     responsibilities:
       "Leads international engagement and outreach across the Ethiopian diaspora community, spearheading initiatives to empower female athletes, secure cross-border partnerships, and support grassroots women's 3x3 basketball development.",
     bio: "Leads international engagement and outreach across the Ethiopian diaspora community, spearheading initiatives to empower female athletes, secure cross-border partnerships, and support grassroots women's 3x3 basketball development.",
@@ -122,7 +123,8 @@ export const LEADERSHIP_MEMBERS: CommitteeMember[] = [
     officialRole: 'Tournament Director',
     certificationStatus: true,
     fibaCredentials: 'FIBA Global Strategy & Diaspora Delegate',
-    image: '/team/yamlak.jpg',
+    image: '/team/yamlak.jpg?v=3',
+    imagePosition: 'center 42%',
     responsibilities:
       "Shapes overarching institutional strategy and drives international engagement across the male Ethiopian diaspora network. Spearheads cross-border partnerships, strategic player recruitment pipelines, and resource development to advance Ethiopian 3x3 basketball internationally.",
     bio: "Shapes overarching institutional strategy and drives international engagement across the male Ethiopian diaspora network. Spearheads cross-border partnerships, strategic player recruitment pipelines, and resource development to advance Ethiopian 3x3 basketball internationally.",
