@@ -1,8 +1,30 @@
 export type Gender = 'Male' | 'Female';
-export type PlayerCategory = 'U18' | 'U23' | 'Open';
+export type PlayerCategory =
+  | 'U16 National Team Pool'
+  | 'U18 National Team Pool'
+  | 'U23 National Team Pool'
+  | 'U16'
+  | 'U18'
+  | 'U23'
+  | 'Open';
+
 export type EventType = 'Clinic' | 'Lite Quest' | 'Quest Final';
 export type EventStatus = 'Upcoming' | 'Ongoing' | 'Completed';
-export type OfficialRole = 'Referee' | 'Table Official' | 'Tournament Director';
+export type OfficialRole =
+  | 'Referee'
+  | 'Table Official'
+  | 'Tournament Director'
+  | 'FIBA Certified Project director'
+  | 'FIBA Certified 3x3 Ethiopia international relation & Communication'
+  | 'FIBA Certified Event operation Lead'
+  | "FIBA Certified Youth Dev't Lead"
+  | 'FIBA 3x3 Ethiopia Finance & Commercial Lead'
+  | 'Global digital Marketer'
+  | 'FIBA 3x3 Ethiopia Social media Delegate'
+  | 'FIBA 3x3 Diaspora & Women in sport Delegate'
+  | 'FIBA 3x3 Global strategy & Diaspora Delegate'
+  | string;
+
 
 export interface Player {
   player_id: string;

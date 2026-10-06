@@ -11,7 +11,6 @@ import {
   Briefcase,
   Layers,
   Sparkles,
-  CheckCircle2,
 } from 'lucide-react';
 
 interface LeadershipSectionProps {
@@ -233,15 +232,13 @@ export default function LeadershipSection({
                   </div>
                 </div>
 
-                {/* Card Footer: FIBA Credentials and Official Role Badge */}
+                {/* Card Footer: Secondary Role Badge (Title2) */}
                 <div
-                  className={`border-t border-surface-border flex items-center justify-between gap-2 ${
-                    preview
-                      ? 'pt-2 text-[10px]'
-                      : 'pt-4 flex-col sm:flex-row sm:items-center text-xs'
+                  className={`border-t border-surface-border flex items-center gap-2 ${
+                    preview ? 'pt-2 text-[10px]' : 'pt-4 text-xs'
                   }`}
                 >
-                  <div className="flex items-center gap-1 text-zinc-300 truncate">
+                  <div className="flex items-center gap-1.5 text-zinc-300 w-full min-w-0">
                     <Award
                       className={`text-brand-yellow shrink-0 ${
                         preview ? 'w-3 h-3' : 'w-4 h-4'
@@ -249,20 +246,11 @@ export default function LeadershipSection({
                     />
                     <span
                       className={`font-mono truncate ${
-                        preview ? 'text-[9px]' : 'text-[11px] font-semibold'
+                        preview ? 'text-[9px]' : 'text-[11px] font-semibold text-zinc-200'
                       }`}
                     >
                       {member.fibaCredentials || 'Official FIBA Delegate'}
                     </span>
-                  </div>
-
-                  <div
-                    className={`flex items-center gap-1 font-mono font-bold text-emerald-400 shrink-0 ${
-                      preview ? 'text-[9px]' : 'text-[11px]'
-                    }`}
-                  >
-                    <CheckCircle2 className={preview ? 'w-3 h-3 text-emerald-400' : 'w-3.5 h-3.5 text-emerald-400'} />
-                    <span>{member.officialRole}</span>
                   </div>
                 </div>
               </div>

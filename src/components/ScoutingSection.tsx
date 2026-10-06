@@ -21,6 +21,9 @@ interface ScoutingSectionProps {
 }
 
 const divisionIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  'U16 National Team Pool': Zap,
+  'U18 National Team Pool': Target,
+  'U23 National Team Pool': Trophy,
   'U16 Junior Circuit': Zap,
   'U18 Elite Pathway': Target,
   'U23 National Roster Pool': Trophy,
@@ -150,20 +153,27 @@ export default function ScoutingSection({
 
           <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto shrink-0">
             <Link
+              href="/profiles"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-brand-orange hover:bg-brand-orange-glow text-black font-black uppercase tracking-wider text-xs shadow-[0_0_25px_rgba(255,85,0,0.5)] hover:shadow-[0_0_35px_rgba(255,85,0,0.8)] transition-all transform hover:-translate-y-0.5 duration-200"
+            >
+              <span>View Player Profiles</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+
+            <Link
               href="/events#register"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-brand-orange hover:bg-brand-orange-glow text-black font-black uppercase tracking-wider text-xs shadow-[0_0_25px_rgba(255,85,0,0.5)] hover:shadow-[0_0_35px_rgba(255,85,0,0.8)] transition-all transform hover:-translate-y-0.5 duration-200"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-neutral-800/80 hover:bg-neutral-800 text-zinc-200 hover:text-white border border-neutral-700 font-bold uppercase tracking-wider text-xs transition-all"
             >
               <span>Register for Scouting</span>
-              <ArrowRight className="w-4 h-4" />
             </Link>
 
             <a
               href="https://play.fiba3x3.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-neutral-800/80 hover:bg-neutral-800 text-zinc-200 hover:text-white border border-neutral-700 font-bold uppercase tracking-wider text-xs transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-neutral-900 hover:bg-neutral-850 text-zinc-400 hover:text-zinc-200 border border-neutral-800 font-bold uppercase tracking-wider text-xs transition-all"
             >
-              <span>FIBA 3x3 Profile</span>
+              <span>FIBA 3x3</span>
             </a>
           </div>
         </div>

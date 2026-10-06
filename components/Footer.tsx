@@ -34,6 +34,11 @@ export default function Footer() {
             <h4 className="text-xs font-black uppercase tracking-widest text-white">Platform</h4>
             <ul className="space-y-2.5 text-sm">
               <li>
+                <Link href="/profiles" className="hover:text-brand-orange transition-colors">
+                  National Player Profiles
+                </Link>
+              </li>
+              <li>
                 <Link href="/events" className="hover:text-brand-orange transition-colors">
                   24 Tour Cities &amp; Roadmap
                 </Link>

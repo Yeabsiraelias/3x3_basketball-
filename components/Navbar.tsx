@@ -8,6 +8,7 @@ import { Flame, Menu, X, Trophy, ArrowRight, ShieldCheck } from 'lucide-react';
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/events', label: 'Tour Cities' },
+  { href: '/profiles', label: 'Player Profiles' },
   { href: '/#scouting', label: 'Scouting' },
   { href: '/development', label: 'Youth Development' },
   { href: '/about', label: 'About Us' },

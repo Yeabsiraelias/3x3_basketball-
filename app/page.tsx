@@ -5,6 +5,7 @@ import EndorsementBanner from '@/src/components/EndorsementBanner';
 import FibaRegistrationCallout from '@/components/FibaRegistrationCallout';
 import TourSection from '@/src/components/TourSection';
 import ScoutingSection from '@/src/components/ScoutingSection';
+import PlayerProfiles from '@/src/components/PlayerProfiles';
 import LeadershipSection from '@/src/components/LeadershipSection';
 import {
   Flame,
@@ -118,7 +119,7 @@ export default function HomePage() {
               3
             </span>
             <span className="text-xs uppercase font-extrabold tracking-wider text-zinc-400 mt-2 block">
-              Divisions (U18, U23, Open)
+              National Squads (U16, U18, U23)
             </span>
           </div>
         </div>
@@ -134,7 +135,12 @@ export default function HomePage() {
         <ScoutingSection />
       </section>
 
-      {/* 6. FIBA PROFILE REGISTRATION CALLOUT */}
+      {/* 6. NATIONAL TEAM PLAYER PROFILES */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <PlayerProfiles />
+      </section>
+
+      {/* 7. FIBA PROFILE REGISTRATION CALLOUT */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <FibaRegistrationCallout />
       </section>

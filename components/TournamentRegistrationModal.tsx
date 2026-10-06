@@ -195,9 +195,10 @@ export default function TournamentRegistrationModal({ tournaments, selectedTourn
                   onChange={(e) => setFormData({ ...formData, category: e.target.value as PlayerCategory })}
                   className="w-full px-4 py-3 rounded-xl bg-background border border-surface-border text-white text-sm focus:border-brand-orange focus:outline-none"
                 >
-                  <option value="Open">Open Category (Men & Women)</option>
-                  <option value="U23">U23 (Born 2003 or later)</option>
-                  <option value="U18">U18 (Born 2008 or later)</option>
+                  <option value="U16 National Team Pool">U16 National Team Pool</option>
+                  <option value="U18 National Team Pool">U18 National Team Pool</option>
+                  <option value="U23 National Team Pool">U23 National Team Pool</option>
+                  <option value="Open">Open National Category</option>
                 </select>
               </div>
 

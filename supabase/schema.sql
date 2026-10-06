@@ -15,7 +15,7 @@ CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 CREATE TYPE gender_enum AS ENUM ('Male', 'Female');
 
 -- Player category enum
-CREATE TYPE player_category_enum AS ENUM ('U18', 'U23', 'Open');
+CREATE TYPE player_category_enum AS ENUM ('U16', 'U18', 'U23', 'Open');
 
 -- Tournament event type enum
 CREATE TYPE event_type_enum AS ENUM ('Clinic', 'Lite Quest', 'Quest Final');
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS teams (
 CREATE TABLE IF NOT EXISTS staff_and_officials (
     official_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     full_name TEXT NOT NULL,
-    role official_role_enum NOT NULL,
+    role TEXT NOT NULL,
     certification_status BOOLEAN DEFAULT false NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
@@ -110,11 +110,12 @@ CREATE POLICY "Public can insert teams" ON teams FOR INSERT WITH CHECK (true);
 -- ------------------------------------------------------------------------------
 INSERT INTO players (player_id, full_name, gender, category, fiba_profile_url, national_ranking_points, region)
 VALUES
-    ('a1111111-1111-1111-1111-111111111111', 'Yared Bekele', 'Male', 'Open', 'https://play.fiba3x3.com/players/yared-bekele', 1450, 'Addis Ababa'),
-    ('a2222222-2222-2222-2222-222222222222', 'Selamawit Tadesse', 'Female', 'Open', 'https://play.fiba3x3.com/players/selamawit-tadesse', 1320, 'Hawassa'),
-    ('a3333333-3333-3333-3333-333333333333', 'Natnael Girma', 'Male', 'U23', 'https://play.fiba3x3.com/players/natnael-girma', 980, 'Dire Dawa'),
-    ('a4444444-4444-4444-4444-444444444444', 'Bethelhem Haile', 'Female', 'U18', 'https://play.fiba3x3.com/players/bethelhem-haile', 760, 'Bahir Dar'),
-    ('a5555555-5555-5555-5555-555555555555', 'Dawit Mengistu', 'Male', 'Open', 'https://play.fiba3x3.com/players/dawit-mengistu', 1120, 'Addis Ababa')
+    ('a1111111-1111-1111-1111-111111111111', 'Yared Bekele', 'Male', 'U23', 'https://play.fiba3x3.com/players/yared-bekele', 1780, 'Addis Ababa'),
+    ('a2222222-2222-2222-2222-222222222222', 'Selamawit Tadesse', 'Female', 'U23', 'https://play.fiba3x3.com/players/selamawit-tadesse', 1740, 'Hawassa'),
+    ('a3333333-3333-3333-3333-333333333333', 'Brook Solomon', 'Male', 'U18', 'https://play.fiba3x3.com/players/brook-solomon', 1350, 'Addis Ababa'),
+    ('a4444444-4444-4444-4444-444444444444', 'Bethelhem Haile', 'Female', 'U18', 'https://play.fiba3x3.com/players/bethelhem-haile', 1220, 'Bahir Dar'),
+    ('a5555555-5555-5555-5555-555555555555', 'Dawit Kebede', 'Male', 'U16', 'https://play.fiba3x3.com/players/dawit-kebede', 940, 'Addis Ababa'),
+    ('a6666666-6666-6666-6666-666666666666', 'Bethlehem Girma', 'Female', 'U16', 'https://play.fiba3x3.com/players/bethlehem-girma', 910, 'Bishoftu')
 ON CONFLICT (player_id) DO NOTHING;
 
 INSERT INTO tournaments (tournament_id, event_name, event_type, location, event_date, fiba_event_maker_id, status)
@@ -134,15 +135,15 @@ ON CONFLICT (team_id) DO NOTHING;
 
 INSERT INTO staff_and_officials (official_id, full_name, role, certification_status)
 VALUES
-    ('d1111111-1111-1111-1111-111111111111', 'Tamrat Alemu Befekadu', 'Tournament Director', true),
-    ('d2222222-2222-2222-2222-222222222222', 'Blen Asrat Kebede', 'Tournament Director', true),
-    ('d3333333-3333-3333-3333-333333333333', 'Brook Hailu Yemane', 'Table Official', true),
-    ('d4444444-4444-4444-4444-444444444444', 'Robel Alemu Ayele', 'Table Official', true),
-    ('d5555555-5555-5555-5555-555555555555', 'Lidiya Eshetu Dula', 'Table Official', true),
-    ('d6666666-6666-6666-6666-666666666666', 'Yeabsira Elias', 'Tournament Director', true),
-    ('d7777777-7777-7777-7777-777777777777', 'Yabtse Yonas Jima', 'Table Official', true),
-    ('d8888888-8888-8888-8888-888888888888', 'Selamawit Kassahun Yosef', 'Tournament Director', true),
-    ('d9999999-9999-9999-9999-999999999999', 'Yamlak Menase', 'Tournament Director', true)
+    ('d1111111-1111-1111-1111-111111111111', 'Tamrat Alemu Befekadu', 'FIBA Certified Project director', true),
+    ('d2222222-2222-2222-2222-222222222222', 'Blen Asrat Kebede', 'FIBA Certified 3x3 Ethiopia international relation & Communication', true),
+    ('d3333333-3333-3333-3333-333333333333', 'Brook Hailu Yamane', 'FIBA Certified Event operation Lead', true),
+    ('d4444444-4444-4444-4444-444444444444', 'Robel Alemu Ayele', 'FIBA Certified Youth Dev''t Lead', true),
+    ('d5555555-5555-5555-5555-555555555555', 'Lydia Eshetu Dula', 'FIBA 3x3 Ethiopia Finance & Commercial Lead', true),
+    ('d6666666-6666-6666-6666-666666666666', 'Yeabsira Elias', 'Global digital Marketer', true),
+    ('d7777777-7777-7777-7777-777777777777', 'Yabts Yonas Jima', 'FIBA 3x3 Ethiopia Social media Delegate', true),
+    ('d8888888-8888-8888-8888-888888888888', 'Selamawit Kassahun Yosef', 'FIBA 3x3 Diaspora & Women in sport Delegate', true),
+    ('d9999999-9999-9999-9999-999999999999', 'Yamlak Menase', 'FIBA 3x3 Global strategy & Diaspora Delegate', true)
 ON CONFLICT (official_id) DO UPDATE SET
     full_name = EXCLUDED.full_name,
     role = EXCLUDED.role,
