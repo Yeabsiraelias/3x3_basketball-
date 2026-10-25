@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { scoutingCategories, ScoutingCategory } from '@/src/data/scouting';
 import {
   Target,
@@ -58,6 +59,86 @@ export default function ScoutingSection({
           <p className="text-sm sm:text-lg text-zinc-300 font-medium leading-relaxed italic">
             Identifying and developing premier Ethiopian basketball talent across U16, U18, and U23 divisions for both Men and Women.
           </p>
+        </div>
+
+        {/* Split-Layout Section: 50% Text, 50% Image highlighting U16, U18 & U23 Scouting Pathways */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center p-6 sm:p-10 rounded-3xl bg-neutral-900/90 border border-neutral-800 shadow-2xl backdrop-blur-xl">
+          {/* 50% Text */}
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-400 text-xs font-black uppercase tracking-widest">
+              <Sparkles className="w-4 h-4 text-rose-400" />
+              <span>Women&apos;s National Pool &amp; Youth Scouting</span>
+            </div>
+
+            <h3 className="text-2xl sm:text-4xl font-black uppercase italic tracking-tight text-white leading-tight">
+              U16, U18 &amp; U23 <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-brand-yellow to-white text-glow">
+                National Team Pathways
+              </span>
+            </h3>
+
+            <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-medium">
+              3x3 Ethiopia is dedicated to scouting and elevating the nation&apos;s fiercest athletes. Through our FIBA-endorsed combines, regional tournaments, and community court showcases, players in both Men&apos;s and Women&apos;s divisions compete directly for official selection into the Ethiopian National Pool.
+            </p>
+
+            {/* Division Pathway Highlights */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <div className="p-3.5 rounded-xl bg-neutral-950/80 border border-emerald-500/30">
+                <span className="text-xs font-black text-emerald-400 uppercase block">U16 Junior</span>
+                <span className="text-[11px] text-zinc-400 mt-1 block">Ages 14–16 youth development &amp; regional invitationals</span>
+              </div>
+              <div className="p-3.5 rounded-xl bg-neutral-950/80 border border-brand-orange/30">
+                <span className="text-xs font-black text-brand-orange uppercase block">U18 Youth</span>
+                <span className="text-[11px] text-zinc-400 mt-1 block">FIBA 3x3 U18 Africa Cup qualifiers &amp; tour slots</span>
+              </div>
+              <div className="p-3.5 rounded-xl bg-neutral-950/80 border border-brand-yellow/30">
+                <span className="text-xs font-black text-brand-yellow uppercase block">U23 National</span>
+                <span className="text-[11px] text-zinc-400 mt-1 block">FIBA 3x3 Nations League &amp; senior squad selection</span>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+              <Link
+                href="/profiles"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-orange hover:bg-brand-orange-glow text-black font-black uppercase tracking-wider text-xs shadow-[0_0_25px_rgba(255,85,0,0.5)] transition-all"
+              >
+                <span>Explore Player Profiles</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <a
+                href="https://play.fiba3x3.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white font-bold uppercase tracking-wider text-xs border border-neutral-700 transition-all"
+              >
+                <span>FIBA Ranking Portal</span>
+              </a>
+            </div>
+          </div>
+
+          {/* 50% Image */}
+          <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-square w-full overflow-hidden rounded-lg border border-neutral-800 shadow-xl group">
+            <Image
+              src="/images/womens-scouting.jpg"
+              alt="Fierce Women's 3x3 Match Scouting in Ethiopia"
+              fill
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-700 rounded-lg"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            {/* Dark gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-transparent to-neutral-950/30 rounded-lg pointer-events-none" />
+
+            {/* Bottom floating badge */}
+            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-950/90 backdrop-blur-md border border-neutral-700 text-white font-bold">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                Women&apos;s National Scouting Live
+              </span>
+              <span className="px-2.5 py-1 rounded-md bg-brand-orange/90 text-black font-black uppercase text-[10px] tracking-wider">
+                FIBA 3x3
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* 3-Column Card Grid */}

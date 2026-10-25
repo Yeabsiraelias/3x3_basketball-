@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import CountdownTimer from '@/components/CountdownTimer';
 import EndorsementBanner from '@/src/components/EndorsementBanner';
 import FibaRegistrationCallout from '@/components/FibaRegistrationCallout';
@@ -23,15 +24,31 @@ export default function HomePage() {
     <div className="flex flex-col space-y-16 sm:space-y-24 pb-20">
       
       {/* 1. HERO SECTION */}
-      <section className="relative pt-12 sm:pt-20 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        {/* Dynamic Glow Accents */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-72 sm:w-[600px] h-72 sm:h-[400px] bg-brand-orange/20 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute top-40 right-10 w-48 h-48 bg-brand-cyan/15 rounded-full blur-[80px] pointer-events-none" />
+      <section className="relative min-h-[85vh] sm:min-h-[92vh] flex items-center justify-center pt-16 sm:pt-24 pb-20 px-4 sm:px-6 lg:px-8 w-full overflow-hidden bg-neutral-950">
+        {/* Full-bleed Hero Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/main-hero.jpg"
+            alt="Ethiopian 3x3 Basketball Action on Outdoor Court"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          {/* Dark gradient overlays maintaining urban aesthetic & text readability */}
+          <div className="absolute inset-0 bg-neutral-950/65" />
+          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/70 via-transparent to-neutral-950" />
+        </div>
 
-        <div className="relative z-10 text-center max-w-4xl mx-auto space-y-6 sm:space-y-8">
+        {/* Dynamic Glow Accents */}
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-72 sm:w-[600px] h-72 sm:h-[400px] bg-brand-orange/20 rounded-full blur-[110px] pointer-events-none z-10" />
+        <div className="absolute top-40 right-10 w-48 h-48 bg-brand-cyan/15 rounded-full blur-[90px] pointer-events-none z-10" />
+
+        <div className="relative z-20 text-center max-w-4xl mx-auto space-y-6 sm:space-y-8">
           
           {/* Top FIBA Tag */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface/90 border border-brand-orange/40 text-brand-orange text-xs sm:text-sm font-black uppercase tracking-widest shadow-lg">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface/90 border border-brand-orange/40 text-brand-orange text-xs sm:text-sm font-black uppercase tracking-widest shadow-lg backdrop-blur-md">
             <Flame className="w-4 h-4 fill-brand-orange" />
             <span>Official FIBA-Endorsed 3x3 Platform</span>
             <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
@@ -48,7 +65,7 @@ export default function HomePage() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-xl text-zinc-300 max-w-2xl mx-auto font-medium leading-relaxed">
+          <p className="text-base sm:text-xl text-zinc-300 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-sm">
             From neighborhood street courts to official FIBA Quest Finals. Empowering youth, building certified champions, and putting Ethiopia on the global 3x3 map.
           </p>
 
@@ -67,7 +84,7 @@ export default function HomePage() {
 
             <Link
               href="/events"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-surface hover:bg-surface-light text-white border border-surface-border hover:border-brand-orange/50 font-bold uppercase tracking-wider text-sm transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-surface/85 backdrop-blur-md hover:bg-surface-light text-white border border-surface-border hover:border-brand-orange/50 font-bold uppercase tracking-wider text-sm transition-all"
             >
               <MapPin className="w-4 h-4 text-brand-orange" />
               <span>Explore Tour Cities</span>

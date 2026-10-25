@@ -26,6 +26,7 @@ import {
   Activity,
   Award,
   Zap,
+  Clock,
 } from 'lucide-react';
 
 interface PlayerProfilesProps {
@@ -163,8 +164,12 @@ export default function PlayerProfiles({
               <Users className="w-4 h-4" />
               <span className="text-[11px] font-black uppercase tracking-wider text-zinc-400">Pool Athletes</span>
             </div>
-            <span className="text-xl sm:text-2xl font-black text-white font-mono">{PLAYER_PROFILES.length}</span>
-            <span className="text-[10px] text-zinc-500 block uppercase font-bold">Active Evaluated</span>
+            <span className="text-xl sm:text-2xl font-black text-white font-mono">
+              {PLAYER_PROFILES.length > 0 ? PLAYER_PROFILES.length : 'Selection'}
+            </span>
+            <span className="text-[10px] text-zinc-500 block uppercase font-bold">
+              {PLAYER_PROFILES.length > 0 ? 'Active Evaluated' : 'Evaluation Active'}
+            </span>
           </div>
 
           <div className="p-3 rounded-xl bg-background/60 border border-surface-border/60 text-center">
@@ -195,8 +200,123 @@ export default function PlayerProfiles({
           </div>
         </div>
 
-        {/* Filter & Search Controls */}
-        <div className="space-y-4 p-5 sm:p-6 rounded-2xl bg-neutral-900/90 border border-neutral-800 shadow-xl backdrop-blur-xl">
+        {PLAYER_PROFILES.length === 0 ? (
+          <div className="space-y-8">
+            <div className="relative overflow-hidden rounded-3xl bg-neutral-900/90 border border-brand-orange/30 p-8 sm:p-12 shadow-2xl backdrop-blur-xl">
+              {/* Background Glows */}
+              <div className="absolute top-0 right-0 w-80 h-80 bg-brand-orange/10 rounded-full blur-[90px] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-cyan/10 rounded-full blur-[90px] pointer-events-none" />
+
+              <div className="relative z-10 max-w-3xl mx-auto text-center space-y-6">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-orange/15 border border-brand-orange/40 text-brand-orange text-xs font-black uppercase tracking-widest">
+                  <Clock className="w-4 h-4 text-brand-orange animate-pulse" />
+                  <span>Official 2026 Evaluation Cycle Active</span>
+                </div>
+
+                <h3 className="text-2xl sm:text-4xl font-black text-white uppercase italic tracking-tight">
+                  National Team Roster Selection{' '}
+                  <span className="text-brand-orange text-glow">Underway</span>
+                </h3>
+
+                <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-medium">
+                  The Ethiopian Basketball Federation and National 3x3 Committee are currently conducting scouting combines, regional clinics, and tournament evaluations across 8 cities. Official athlete dossiers for the <strong className="text-white">U16</strong>, <strong className="text-white">U18</strong>, and <strong className="text-white">U23</strong> National Pools (Men &amp; Women) will be published here following technical committee ratification.
+                </p>
+
+                {/* 3 Division Pipeline Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 text-left">
+                  {/* U16 Card */}
+                  <div className="p-5 rounded-2xl bg-neutral-950/80 border border-emerald-500/30 backdrop-blur-sm space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-emerald-500/15 border border-emerald-500/40 text-emerald-400">
+                        <ShieldCheck className="w-3.5 h-3.5" />
+                        <span>U16 National Pool</span>
+                      </span>
+                      <span className="text-[10px] font-bold text-zinc-400 uppercase font-mono">Ages 14–16</span>
+                    </div>
+                    <h4 className="text-sm font-black text-white uppercase">Youth Development</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Grassroots talent identification across schools and junior regional invitationals.
+                    </p>
+                    <div className="pt-1 flex items-center gap-2 text-[11px] font-bold text-emerald-400">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span>Scouting Trials Active</span>
+                    </div>
+                  </div>
+
+                  {/* U18 Card */}
+                  <div className="p-5 rounded-2xl bg-neutral-950/80 border border-brand-orange/30 backdrop-blur-sm space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-brand-orange/15 border border-brand-orange/40 text-brand-orange">
+                        <ShieldCheck className="w-3.5 h-3.5" />
+                        <span>U18 National Pool</span>
+                      </span>
+                      <span className="text-[10px] font-bold text-zinc-400 uppercase font-mono">Ages 16–18</span>
+                    </div>
+                    <h4 className="text-sm font-black text-white uppercase">Youth Africa Cup</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Evaluating high-caliber prospects for continental qualifiers and youth national tour slots.
+                    </p>
+                    <div className="pt-1 flex items-center gap-2 text-[11px] font-bold text-brand-orange">
+                      <span className="w-2 h-2 rounded-full bg-brand-orange animate-pulse" />
+                      <span>Camp Prep Underway</span>
+                    </div>
+                  </div>
+
+                  {/* U23 Card */}
+                  <div className="p-5 rounded-2xl bg-neutral-950/80 border border-brand-yellow/30 backdrop-blur-sm space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-brand-yellow/15 border border-brand-yellow/40 text-brand-yellow">
+                        <ShieldCheck className="w-3.5 h-3.5" />
+                        <span>U23 National Pool</span>
+                      </span>
+                      <span className="text-[10px] font-bold text-zinc-400 uppercase font-mono">Ages 18–23</span>
+                    </div>
+                    <h4 className="text-sm font-black text-white uppercase">Nations League</h4>
+                    <p className="text-xs text-zinc-400 leading-relaxed">
+                      Scouting university and club athletes for the official FIBA 3x3 Nations League circuit.
+                    </p>
+                    <div className="pt-1 flex items-center gap-2 text-[11px] font-bold text-brand-yellow">
+                      <span className="w-2 h-2 rounded-full bg-brand-yellow animate-pulse" />
+                      <span>Circuit Scouting</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Pathway CTAs */}
+                <div className="pt-4 border-t border-neutral-800/80 flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <a
+                    href="https://play.fiba3x3.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-orange hover:bg-brand-orange-glow text-black font-black uppercase text-xs tracking-wider transition-all shadow-[0_0_20px_rgba(255,85,0,0.4)]"
+                  >
+                    <span>Register FIBA 3x3 Profile</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+
+                  <Link
+                    href="/scouting"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white font-black uppercase text-xs tracking-wider transition-all border border-neutral-700"
+                  >
+                    <span>National Scouting Program</span>
+                    <ChevronRight className="w-4 h-4 text-brand-orange" />
+                  </Link>
+
+                  <Link
+                    href="/tournaments"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-neutral-950 hover:bg-neutral-900 text-zinc-300 hover:text-white font-black uppercase text-xs tracking-wider transition-all border border-neutral-800"
+                  >
+                    <span>Upcoming Tournaments</span>
+                    <ChevronRight className="w-4 h-4 text-brand-cyan" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <>
+            {/* Filter & Search Controls */}
+            <div className="space-y-4 p-5 sm:p-6 rounded-2xl bg-neutral-900/90 border border-neutral-800 shadow-xl backdrop-blur-xl">
           
           {/* Row 1: Division Tabs (All, U16 National Team, U18 National Team, U23 National Team) */}
           <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
@@ -493,6 +613,8 @@ export default function PlayerProfiles({
               );
             })}
           </div>
+        )}
+          </>
         )}
 
         {/* Bottom Callout Banner */}

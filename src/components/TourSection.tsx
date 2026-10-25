@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import Image from 'next/image';
 import { tourCities, TourCity } from '@/src/data/tourCities';
 import {
   MapPin,
@@ -179,6 +180,47 @@ export default function TourSection({
               </button>
             );
           })}
+        </div>
+      </div>
+
+      {/* Featured National Tour Photography Banner */}
+      <div className="relative mb-6 overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900/90 shadow-2xl group">
+        <div className="relative aspect-[21/9] sm:aspect-[24/9] w-full min-h-[200px] sm:min-h-[260px]">
+          <Image
+            src="/images/national-tour.jpg"
+            alt="Massive festival crowd around the FIBA 3x3 court in Adama, Ethiopia"
+            fill
+            className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+          />
+          {/* Dark gradient overlay for readability & urban dark aesthetic */}
+          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/45 to-transparent" />
+          <div className="absolute inset-0 bg-neutral-950/20" />
+
+          {/* Floating Caption / Information Badge */}
+          <div className="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-6 sm:right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+            <div className="space-y-1">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-brand-orange text-black text-[10px] font-black uppercase tracking-wider shadow-md">
+                <Flame className="w-3 h-3 fill-black" />
+                <span>Tour Atmosphere • Adama, Ethiopia</span>
+              </div>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-black uppercase italic tracking-tight text-white drop-shadow-md">
+                Massive Community Energy Across 24 Cities
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-300 max-w-xl font-medium hidden sm:block drop-shadow-sm">
+                From bustling downtown street festivals to packed stadium plazas, the 3x3 Ethiopia tour brings electrifying competition to every region.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2 self-start sm:self-auto shrink-0">
+              <span className="px-3 py-1.5 rounded-lg bg-neutral-950/85 backdrop-blur-md border border-neutral-700/80 text-white font-mono text-xs font-bold">
+                <span className="text-brand-orange">24</span> Tour Stops
+              </span>
+              <span className="px-3 py-1.5 rounded-lg bg-neutral-950/85 backdrop-blur-md border border-neutral-700/80 text-brand-yellow font-mono text-xs font-bold">
+                FIBA Endorsed
+              </span>
+            </div>
+          </div>
         </div>
       </div>
 

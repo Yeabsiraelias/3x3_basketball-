@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import ClinicsSection from '@/src/components/ClinicsSection';
 import {
   Flame,
@@ -8,6 +9,8 @@ import {
   School,
   HeartHandshake,
   ArrowRight,
+  ShieldCheck,
+  Calendar,
 } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -19,21 +22,57 @@ export const metadata: Metadata = {
 
 export default function DevelopmentPage() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-20 sm:space-y-28">
+    <div className="flex flex-col space-y-16 sm:space-y-24 pb-20">
 
-      {/* 1. HERO HEADER */}
-      <div className="text-center max-w-3xl mx-auto space-y-4">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-cyan/15 border border-brand-cyan/30 text-brand-cyan text-xs font-black uppercase tracking-widest">
-          <Flame className="w-4 h-4" />
-          National Game Initiatives
+      {/* 1. HERO SECTION WITH CLINIC TRAINING PHOTOGRAPHY */}
+      <div className="relative min-h-[75vh] w-full flex items-center justify-center overflow-hidden bg-neutral-950">
+        <div className="absolute inset-0 z-10 bg-black/70" /> {/* Dark overlay */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent" />
+        <Image
+          src="/images/clinic-training.jpg"
+          alt="3x3 Clinic and Player Development in Ethiopia"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-cyan/20 border border-brand-cyan/40 text-brand-cyan text-xs font-black uppercase tracking-widest backdrop-blur-md">
+            <Flame className="w-4 h-4 text-brand-orange" />
+            <span>National Grassroots Initiatives</span>
+          </div>
+
+          <h1 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tight leading-none drop-shadow-md">
+            Grassroots <span className="text-orange-500">Clinics</span> &amp; Player Development
+          </h1>
+
+          <p className="text-base sm:text-xl text-zinc-300 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-sm">
+            Building the next generation of Ethiopian basketball athletes, certified female leaders, and community role models through specialized 3x3 academies and regional clinics.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <a
+              href="#clinics-schedule"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-brand-orange hover:bg-brand-orange-glow text-black font-black uppercase tracking-wider text-xs sm:text-sm shadow-[0_0_25px_rgba(255,85,0,0.5)] transition-all"
+            >
+              <span>View Clinic Schedule</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+
+            <a
+              href="https://play.fiba3x3.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-neutral-900/90 hover:bg-neutral-800 text-white border border-neutral-700 font-bold uppercase tracking-wider text-xs sm:text-sm transition-all"
+            >
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <span>Register on FIBA 3x3</span>
+            </a>
+          </div>
         </div>
-        <h1 className="text-4xl sm:text-6xl font-black uppercase italic text-white tracking-tight">
-          Youth & Grassroots <span className="text-brand-orange">Development</span>
-        </h1>
-        <p className="text-base sm:text-lg text-zinc-300 leading-relaxed">
-          Building the next generation of Ethiopian basketball athletes, certified female leaders, and community role models through specialized 3x3 academies and regional clinics.
-        </p>
       </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 sm:space-y-28 w-full">
 
       {/* 2. REGIONAL 3x3 CLINICS & CAMPS */}
       <ClinicsSection />
@@ -169,6 +208,7 @@ export default function DevelopmentPage() {
           >
             <span>Call: +251 94 556 2429</span>
           </a>
+        </div>
         </div>
       </div>
 
