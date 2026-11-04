@@ -67,7 +67,7 @@ export default function ClinicsSection({
                 Regional <span className="text-brand-orange text-glow">3x3 Clinics</span> & Camps
               </h2>
               <p className="text-sm sm:text-base text-zinc-300 font-medium leading-relaxed">
-                Structured grassroots developmental training, 12-second shot clock tactical drills, and referee clinics across 9 certified regional venues.
+                Structured grassroots developmental training, 12-second shot clock tactical drills, and referee clinics across {clinics.length} certified regional venues.
               </p>
             </div>
 
@@ -150,8 +150,16 @@ export default function ClinicsSection({
                     </span>
                   </div>
 
+                  {/* Date Badge */}
+                  {clinic.date && (
+                    <div className="flex items-center gap-2 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-3 py-1.5 rounded-xl">
+                      <Calendar className="w-3.5 h-3.5 shrink-0" />
+                      <span>{clinic.date}</span>
+                    </div>
+                  )}
+
                   {/* Venue Info */}
-                  <div className="flex items-start gap-2 text-xs text-zinc-300 pt-1">
+                  <div className="flex items-start gap-2 text-xs text-zinc-300 pt-0.5">
                     <MapPin className="w-4 h-4 text-brand-orange shrink-0 mt-0.5" />
                     <span className="font-semibold">{clinic.venue}</span>
                   </div>

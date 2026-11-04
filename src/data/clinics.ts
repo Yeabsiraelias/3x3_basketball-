@@ -3,6 +3,7 @@ export interface ClinicSession {
   city: string;
   region: string;
   venue: string;
+  date?: string;
   targetAudience: string;
   focus: string;
   status: 'Open' | 'Upcoming' | 'Full';
@@ -11,6 +12,36 @@ export interface ClinicSession {
 export const clinicPrograms: ClinicSession[] = [
   {
     id: 'clinic-1',
+    city: 'Addis Ababa',
+    region: 'Addis Ababa',
+    venue: 'Addis Ababa Stadium Outdoor Courts',
+    date: 'November 20 - 22, 2026',
+    targetAudience: 'U16, U18 & U23 Elite & Grassroots',
+    focus: 'Fundamentals, 12-second shot clock decision making, and 3x3 half-court spacing.',
+    status: 'Open',
+  },
+  {
+    id: 'clinic-2',
+    city: 'Debrezeyet',
+    region: 'Oromia',
+    venue: 'Debrezeyet Youth Sports Center',
+    date: 'November 27 - 29, 2026',
+    targetAudience: 'U16 & U18 Grassroots',
+    focus: 'Ball handling under physical pressure, catch-and-shoot perimeter mechanics.',
+    status: 'Open',
+  },
+  {
+    id: 'clinic-3',
+    city: 'Hawassa',
+    region: 'Sidama',
+    venue: 'Hawassa Stadium Multi-Sport Center',
+    date: 'December 4 - 6, 2026',
+    targetAudience: 'U16, U18 & U23 Athletes',
+    focus: 'High-intensity scrimmage simulations and national scouting combine drills.',
+    status: 'Open',
+  },
+  {
+    id: 'clinic-4',
     city: 'Harar',
     region: 'Harari',
     venue: 'Harar Stadium Outdoor Courts',
@@ -19,7 +50,7 @@ export const clinicPrograms: ClinicSession[] = [
     status: 'Upcoming',
   },
   {
-    id: 'clinic-2',
+    id: 'clinic-5',
     city: 'Dire Dawa',
     region: 'Dire Dawa',
     venue: 'Dire Dawa Sports Complex',
@@ -28,16 +59,7 @@ export const clinicPrograms: ClinicSession[] = [
     status: 'Upcoming',
   },
   {
-    id: 'clinic-3',
-    city: 'Bishoftu',
-    region: 'Oromia',
-    venue: 'Bishoftu Youth Center Court',
-    targetAudience: 'U16 & U18 Grassroots',
-    focus: 'Ball handling under physical pressure, catch-and-shoot perimeter mechanics.',
-    status: 'Open',
-  },
-  {
-    id: 'clinic-4',
+    id: 'clinic-6',
     city: 'Jimma',
     region: 'Oromia',
     venue: 'Jimma University Sports Ground',
@@ -46,7 +68,7 @@ export const clinicPrograms: ClinicSession[] = [
     status: 'Upcoming',
   },
   {
-    id: 'clinic-5',
+    id: 'clinic-7',
     city: 'Gambela',
     region: 'Gambela',
     venue: 'Gambela Regional Stadium Courts',
@@ -55,7 +77,7 @@ export const clinicPrograms: ClinicSession[] = [
     status: 'Upcoming',
   },
   {
-    id: 'clinic-6',
+    id: 'clinic-8',
     city: 'Wolkite',
     region: 'Central Ethiopia',
     venue: 'Wolkite Poly-Court Arena',
@@ -64,16 +86,7 @@ export const clinicPrograms: ClinicSession[] = [
     status: 'Upcoming',
   },
   {
-    id: 'clinic-7',
-    city: 'Hawassa',
-    region: 'Sidama',
-    venue: 'Hawassa Stadium Multi-Sport Center',
-    targetAudience: 'U16, U18 & U23 Athletes',
-    focus: 'High-intensity scrimmage simulations and national scouting combine drills.',
-    status: 'Open',
-  },
-  {
-    id: 'clinic-8',
+    id: 'clinic-9',
     city: 'Bahir Dar',
     region: 'Amhara',
     venue: 'Bahir Dar Stadium Sports Courts',
@@ -82,7 +95,7 @@ export const clinicPrograms: ClinicSession[] = [
     status: 'Upcoming',
   },
   {
-    id: 'clinic-9',
+    id: 'clinic-10',
     city: 'Wukro',
     region: 'Tigray',
     venue: 'Wukro Youth Sports Center',

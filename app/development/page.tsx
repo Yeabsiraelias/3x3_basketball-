@@ -17,7 +17,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Youth Development & Clinics | 3x3 Ethiopia',
   description:
-    'Grassroots 3x3 basketball clinics for U16, U18, and U23 athletes across Harar, Dire Dawa, Bishoftu, Jimma, Gambela, Wolkite, Hawassa, Bahir Dar, and Wukro.',
+    'Grassroots 3x3 basketball clinics for U16, U18, and U23 athletes across Addis Ababa, Debrezeyet, Hawassa, Harar, Dire Dawa, Jimma, Gambela, Wolkite, Bahir Dar, and Wukro.',
 };
 
 export default function DevelopmentPage() {
