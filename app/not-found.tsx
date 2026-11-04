@@ -1,13 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import { Flame, Home, Trophy, ArrowRight } from 'lucide-react';
+import { Home, Trophy, ArrowRight } from 'lucide-react';
+import { BasketballIcon } from '@/components/BasketballIcon';
 
 export default function NotFound() {
   return (
     <div className="min-h-[70vh] flex items-center justify-center px-4 py-16">
       <div className="max-w-md w-full text-center space-y-6 p-8 rounded-3xl bg-surface/90 border border-surface-border backdrop-blur-md">
         <div className="w-16 h-16 rounded-2xl bg-brand-orange/20 border border-brand-orange/40 text-brand-orange flex items-center justify-center mx-auto">
-          <Flame className="w-8 h-8 fill-brand-orange" />
+          <BasketballIcon className="w-8 h-8 text-brand-orange" strokeWidth={2} />
         </div>
         
         <span className="text-xs font-black uppercase tracking-widest text-brand-orange">

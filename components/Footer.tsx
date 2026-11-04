@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { Flame, Trophy, Globe, MapPin, Mail, Phone, ArrowUpRight } from 'lucide-react';
+import { Trophy, Globe, MapPin, Mail, Phone, ArrowUpRight } from 'lucide-react';
+import { BasketballIcon } from './BasketballIcon';
 
 export default function Footer() {
   return (
@@ -12,7 +13,7 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-3">
               <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange to-brand-yellow text-black font-black">
-                <Flame className="w-6 h-6 fill-black" />
+                <BasketballIcon className="w-6 h-6 text-black" strokeWidth={2.2} />
               </div>
               <span className="text-2xl font-black tracking-tighter text-white uppercase italic">
                 3x3 <span className="text-brand-orange">ETHIOPIA</span>

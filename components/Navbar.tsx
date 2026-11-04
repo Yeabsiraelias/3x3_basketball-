@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Flame, Menu, X, Trophy, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Menu, X, Trophy, ArrowRight, ShieldCheck } from 'lucide-react';
+import { BasketballIcon } from './BasketballIcon';
 
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
@@ -26,7 +27,7 @@ export default function Navbar() {
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-brand-orange to-brand-yellow text-background font-black text-xl shadow-[0_0_20px_rgba(255,85,0,0.4)] group-hover:scale-105 transition-transform duration-300">
-              <Flame className="w-6 h-6 text-black fill-black" />
+              <BasketballIcon className="w-6 h-6 text-black" strokeWidth={2.2} />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
