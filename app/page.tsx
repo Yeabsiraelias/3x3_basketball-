@@ -181,7 +181,7 @@ export default function HomePage() {
 
           {/* Launch Countdown Component */}
           <div className="pt-6">
-            <CountdownTimer targetDate="2026-11-20T00:00:00" />
+            <CountdownTimer targetDate="2026-11-20T00:00:00+03:00" />
           </div>
         </div>
       </section>
